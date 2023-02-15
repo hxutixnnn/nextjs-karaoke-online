@@ -2,6 +2,7 @@ import {
   MagnifyingGlassIcon,
   MusicalNoteIcon,
   RectangleStackIcon,
+  UserIcon,
 } from "@heroicons/react/20/solid";
 import { useKaraokeState } from "../hooks/karaoke";
 
@@ -29,6 +30,13 @@ export default function BottomNavigation() {
       >
         <RectangleStackIcon className="w-6 h-6" />
         <span className="btm-nav-label">Thể loại</span>
+      </button>
+      <button
+        className={`text-primary ${activeIndex === 3 ? "active" : ""}`}
+        onClick={() => setActiveIndex(3)}
+      >
+        <UserIcon className="w-6 h-6" />
+        <span className="btm-nav-label">Tài khoản</span>
       </button>
     </div>
   );

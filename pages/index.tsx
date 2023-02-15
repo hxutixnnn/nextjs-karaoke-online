@@ -16,6 +16,9 @@ const ListSingerGrid = dynamic(() => import("../components/ListSingerGrid"), {
 const ListTopicsGrid = dynamic(() => import("../components/ListTopicsGrid"), {
   loading: () => <div>Loading...</div>,
 });
+const UserAccount = dynamic(() => import("../components/UserAccount"), {
+  loading: () => <div>Loading...</div>,
+});
 
 function HomePage() {
   const {
@@ -178,7 +181,7 @@ function HomePage() {
               {/* END Search Bar */}
               {/* Recommend Videos List */}
               <div
-                className={`relative grid grid-cols-2 xl:grid-cols-3 auto-rows-min gap-2 w-full overflow-y-auto max-h-full p-2 ${scrollbarCls}`}
+                className={`relative grid grid-cols-2 xl:grid-cols-3 auto-rows-min gap-2 w-full overflow-y-auto h-full p-2 ${scrollbarCls}`}
               >
                 {/* START Video Row Item */}
 
@@ -190,6 +193,7 @@ function HomePage() {
                     />,
                     <ListSingerGrid key={1} />,
                     <ListTopicsGrid key={2} />,
+                    <UserAccount key={3} />,
                   ][activeIndex]
                 }
 
